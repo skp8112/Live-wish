@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Aaru Ji!</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            background-size: 200% 200%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #fff;
+            text-align: center;
+            animation: bgAnim 10s ease infinite;
+            overflow: hidden;
+        }
+
+        @keyframes bgAnim {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        .name {
+            color: gold;
+            font-size: 3.5em;
+            text-shadow: 3px 3px 8px #000;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .image-container img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        /* Balloons */
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            background-color: red;
+            border-radius: 50% 50% 50% 50%;
+            animation: float 6s infinite;
+        }
+
+        .balloon:nth-child(1) { left: 10%; background-color: #ff0000; animation-delay: 0s; }
+        .balloon:nth-child(2) { left: 30%; background-color: #00ff00; animation-delay: 2s; }
+        .balloon:nth-child(3) { left: 50%; background-color: #0000ff; animation-delay: 4s; }
+        .balloon:nth-child(4) { left: 70%; background-color: #ffff00; animation-delay: 1s; }
+        .balloon:nth-child(5) { left: 90%; background-color: #ff00ff; animation-delay: 3s; }
+
+        @keyframes float {
+            0% { bottom: -60px; transform: rotate(0deg); }
+            50% { transform: rotate(10deg); }
+            100% { bottom: 100%; transform: rotate(-10deg); }
+        }
+
+        /* Teddy and Heart Animation */
+        .male-teddy {
+            position: absolute;
+            bottom: 20%;
+            left: -150px;
+            width: 100px;
+            transition: left 2s ease;
+            z-index: 2;
+        }
+
+        .female-teddy {
+            position: absolute;
+            bottom: 20%;
+            right: 50px;
+            width: 100px;
+            z-index: 2;
+        }
+
+        .heart {
+            position: absolute;
+            width: 50px;
+            bottom: 45%;
+            left: 100px;
+            transition: all 2s ease;
+            z-index: 3;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Balloons -->
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
+    <!-- Aaru Ji Photo -->
+    <div class="image-container">
+        <img src="https://drive.google.com/uc?export=view&id=127aTPcEwXiOI5uo3Oy78n-C0RIzGTLS-" alt="Aaru Ji">
+    </div>
+
+    <h1>Happy Birthday <span class="name">Aaru Ji</span>! 🎉💖</h1>
+    <p>May God fulfill all your dreams and desires 💕</p>
+
+    <!-- Teddy Animation -->
+    <img class="male-teddy" id="male" src="https://i.postimg.cc/wv1gBStV/male-teddy.png" alt="Male Teddy">
+    <img class="female-teddy" src="https://i.postimg.cc/dtXtgx8y/female-teddy.png" alt="Female Teddy">
+    <img class="heart" id="heart" src="https://i.postimg.cc/FzX2dfQh/heart.png" alt="Heart">
+
+    <!-- Online Birthday Song -->
+    <audio autoplay loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        window.onload = function() {
+            // Male teddy moves to center after 1s
+            setTimeout(() => {
+                document.getElementById('male').style.left = '40%';
+            }, 1000);
+
+            // Heart moves to female teddy after 3s
+            setTimeout(() => {
+                document.getElementById('heart').style.left = '70%';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
